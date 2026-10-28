@@ -211,7 +211,7 @@ export default function ClientReviews() {
             <span className="bm-rating-score">4.9 / 5.0</span>
             <div className="bm-rating-stars-tiny">
               {[...Array(5)].map((_, i) => (
-                <HiStar key={i} className="h-4 w-4 text-amber-400" />
+                <HiStar key={i} className="bm-star-icon" />
               ))}
             </div>
             <span className="bm-rating-count">(Verified Google Reviews)</span>
@@ -240,7 +240,7 @@ export default function ClientReviews() {
 
               {/* Review Quote Text */}
               <blockquote className="bm-review-quote">
-                <p className="bm-review-text">"{item.review}"</p>
+                <p className="bm-review-text">&ldquo;{item.review}&rdquo;</p>
               </blockquote>
 
               {/* Bottom: Solid Color Avatar with First Letter/Initials + Verified Meta */}
@@ -283,7 +283,7 @@ export default function ClientReviews() {
 
               {/* Review Quote Text */}
               <blockquote className="bm-review-quote">
-                <p className="bm-review-text">"{item.review}"</p>
+                <p className="bm-review-text">&ldquo;{item.review}&rdquo;</p>
               </blockquote>
 
               {/* Bottom: Solid Color Avatar with First Letter/Initials + Verified Meta */}

@@ -23,7 +23,15 @@ export async function POST(request) {
         ? `Other: ${otherService}`
         : service || "Custom Website Development";
 
-    // Google Sheets Webhook URL
+    // Basic production validation: at least contact info must be provided
+    if (!name?.trim() && !email?.trim() && !phone?.trim()) {
+      return NextResponse.json(
+        { success: false, error: "Name and contact info are required" },
+        { status: 400 }
+      );
+    }
+
+    // Google Sheets Webhook URL loaded from .env
     const googleSheetWebhookUrl =
       process.env.GOOGLE_SHEETS_WEBHOOK_URL ||
       "https://script.google.com/macros/s/AKfycbz6kPgNw555NUGM33b2_rfP6pV5p8BO_CVy0cVTBThiCZPcHawhIx7r9Pv6MACju-lD/exec";
@@ -40,9 +48,9 @@ export async function POST(request) {
             type: "CUSTOM_WEB",
             site: "customwebsitedevelopment",
             pageUrl,
-            name,
-            email,
-            phone,
+            name: name.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
             service: resolvedService,
             details: details || "",
             requirements: details || "",

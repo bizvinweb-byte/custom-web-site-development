@@ -93,14 +93,12 @@ export default function FeaturedCaseStudy() {
               </p>
             </div>
 
-            {/* Action Button: Themed Orange Pill Button (Visit Website) */}
+            {/* Action Button: Themed Orange Pill Button */}
             <a
-              href="https://leela-gulf.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#portfolio"
               className="bm-stat-btn-orange"
             >
-              <span>Visit Website</span>
+              <span>View Portfolio</span>
               <HiOutlineExternalLink className="bm-stat-btn-arrow" />
             </a>
           </div>
@@ -118,7 +116,6 @@ export default function FeaturedCaseStudy() {
                       <span className="bm-mockup-dot yellow" />
                       <span className="bm-mockup-dot green" />
                     </div>
-                    <span className="bm-mockup-url">leela-gulf.vercel.app</span>
                     <span className="bm-mockup-scroll-hint" title="Scrollable mockup">
                       <HiOutlineArrowsExpand className="h-3 w-3" />
                       <span>Scroll</span>

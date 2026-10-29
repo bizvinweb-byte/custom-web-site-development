@@ -24,8 +24,17 @@ const serviceLinks = [
   { name: "Next.js & React Web Apps", href: "#services" },
   { name: "Enterprise CRM Portals", href: "#services" },
   { name: "LMS Portal Development", href: "#services" },
-  { name: "Full-Stack Development", href: "#services" },
+  { name: "Full-Stack Web Engineering", href: "#services" },
   { name: "Website Redesign & CRO", href: "#why-cro" },
+];
+
+const locationLinks = [
+  { name: "Noida Sector 62 (HQ)", href: "/custom-website-development-in-noida" },
+  { name: "Greater Noida Hub", href: "/custom-website-development-in-greater-noida" },
+  { name: "Delhi NCR Region", href: "/custom-website-development-in-delhi-ncr" },
+  { name: "Gurugram Cyber City", href: "/custom-website-development-in-gurugram" },
+  { name: "Ghaziabad & Indirapuram", href: "/custom-website-development-in-ghaziabad" },
+  { name: "Faridabad Industrial Hub", href: "/custom-website-development-in-faridabad" },
 ];
 
 const quickLinks = [
@@ -34,8 +43,24 @@ const quickLinks = [
   { name: "Client Reviews", href: "#reviews" },
   { name: "Our Process", href: "#process" },
   { name: "Portfolio", href: "#portfolio" },
-  { name: "Why CRO Architecture", href: "#why-cro" },
+  { name: "Frequently Asked Questions", href: "#faq" },
   { name: "Book Consultation", href: "#lead-form" },
+];
+
+const popularSearches = [
+  "Custom Website Development in Noida",
+  "Custom Web Development Company Noida Sector 62",
+  "Website Developers in Noida Sector 63",
+  "Best Website Development Company in Noida",
+  "Next.js Developers Noida",
+  "React.js Web Development Agency Noida",
+  "Enterprise CRM Development Noida",
+  "LMS Portal Development Company Noida",
+  "Full Stack Development Company Delhi NCR",
+  "Custom Software Development Sector 62 Noida",
+  "E-Commerce Website Development Noida",
+  "B2B Web Applications Noida Expressway",
+  "Brandmingo Noida Web Engineering",
 ];
 
 const socialLinks = [
@@ -67,9 +92,9 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  // Mobile accordion tabs state: both start collapsed or toggled by user
   const [openAccordion, setOpenAccordion] = useState({
     solutions: false,
+    locations: false,
     quickLinks: false,
   });
 
@@ -81,38 +106,40 @@ export default function Footer() {
   };
 
   const handleScrollTo = (e, targetId) => {
-    e.preventDefault();
-    if (targetId === "#hero") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    if (targetId === "#lead-form" || targetId === "#quote-form") {
-      openConsultationModal();
-      return;
-    }
-    const id = targetId.replace("#", "");
-    const element = document.getElementById(id);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    // If it's an internal hash link
+    if (targetId.startsWith("#")) {
+      e.preventDefault();
+      if (targetId === "#hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      if (targetId === "#lead-form" || targetId === "#quote-form") {
+        openConsultationModal();
+        return;
+      }
+      const id = targetId.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
     }
   };
 
   return (
     <footer className="bm-orange-footer" aria-label="Brandmingo Footer">
-      {/* Decorative Top Wave / Ambient Line */}
+      {/* Decorative Top Ambient Line */}
       <div className="bm-footer-glow-accent" aria-hidden="true" />
 
       <div className="bm-container">
-        {/* Main 4-Column Grid */}
+        {/* Main Columns Grid */}
         <div className="bm-footer-grid">
           {/* =========================================================
-              COLUMN 1: Brand Logo, Custom Description & Social Badges
+              COLUMN 1: Brand Logo, Description, Company Link & Socials
              ========================================================= */}
           <div className="bm-footer-col bm-footer-col-brand">
-            {/* Logo wrapped in sleek white pill badge */}
             <Link
               href="#hero"
               onClick={(e) => handleScrollTo(e, "#hero")}
@@ -121,22 +148,27 @@ export default function Footer() {
             >
               <Image
                 src="/brandmingologo.png"
-                alt="Brandmingo"
+                alt="Brandmingo - Custom Website Development Company in Noida Sector 62"
                 width={175}
                 height={36}
                 className="bm-footer-logo-img"
               />
             </Link>
 
-            {/* Tailored content for custom website development */}
             <p className="bm-footer-brand-desc">
-              Premier custom website development company in Noida Sector 62. We
-              engineer pure-code Next.js web applications, enterprise CRM & LMS
-              portals, and high-performance digital experiences built for scalable
-              business growth.
+              Premier custom website development company in Noida Sector 62. A specialized digital engineering division of{" "}
+              <a
+                href="https://brandmingo.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bm-footer-parent-link"
+              >
+                Brandmingo Media
+              </a>
+              . We engineer pure-code Next.js web applications, enterprise CRM &amp; LMS portals, and high-performance digital experiences built for scalable business growth.
             </p>
 
-            {/* Social Media Links with circular glassmorphism icons */}
+            {/* Social Media Links */}
             <div className="bm-footer-social-row">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -157,7 +189,7 @@ export default function Footer() {
           </div>
 
           {/* =========================================================
-              COLUMN 2: Services / Web Solutions (Accordion on Mobile)
+              COLUMN 2: Web Solutions
              ========================================================= */}
           <div className={`bm-footer-col bm-footer-accordion-col ${openAccordion.solutions ? "bm-accordion-open" : ""}`}>
             <button
@@ -174,10 +206,7 @@ export default function Footer() {
               <HiChevronDown className="bm-footer-chevron-icon" aria-hidden="true" />
             </button>
 
-            <div
-              id="footer-web-solutions-list"
-              className="bm-footer-collapse-panel"
-            >
+            <div id="footer-web-solutions-list" className="bm-footer-collapse-panel">
               <ul className="bm-footer-links-list">
                 {serviceLinks.map((service, idx) => (
                   <li key={idx}>
@@ -196,38 +225,31 @@ export default function Footer() {
           </div>
 
           {/* =========================================================
-              COLUMN 3: Quick Navigation (Accordion on Mobile)
+              COLUMN 3: Regional Hubs / City Landing Pages
              ========================================================= */}
-          <div className={`bm-footer-col bm-footer-accordion-col ${openAccordion.quickLinks ? "bm-accordion-open" : ""}`}>
+          <div className={`bm-footer-col bm-footer-accordion-col ${openAccordion.locations ? "bm-accordion-open" : ""}`}>
             <button
               type="button"
               className="bm-footer-col-header-btn"
-              onClick={() => toggleAccordion("quickLinks")}
-              aria-expanded={openAccordion.quickLinks}
-              aria-controls="footer-quick-links-list"
+              onClick={() => toggleAccordion("locations")}
+              aria-expanded={openAccordion.locations}
+              aria-controls="footer-locations-list"
             >
               <div className="bm-footer-title-wrap">
-                <h3 className="bm-footer-col-title">Quick Links</h3>
+                <h3 className="bm-footer-col-title">Areas We Serve</h3>
                 <div className="bm-footer-title-line" aria-hidden="true" />
               </div>
               <HiChevronDown className="bm-footer-chevron-icon" aria-hidden="true" />
             </button>
 
-            <div
-              id="footer-quick-links-list"
-              className="bm-footer-collapse-panel"
-            >
+            <div id="footer-locations-list" className="bm-footer-collapse-panel">
               <ul className="bm-footer-links-list">
-                {quickLinks.map((link, idx) => (
+                {locationLinks.map((loc, idx) => (
                   <li key={idx}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleScrollTo(e, link.href)}
-                      className="bm-footer-link"
-                    >
+                    <Link href={loc.href} className="bm-footer-link">
                       <HiArrowRight className="bm-footer-arrow-icon" aria-hidden="true" />
-                      <span>{link.name}</span>
-                    </a>
+                      <span>{loc.name}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -244,7 +266,6 @@ export default function Footer() {
             </div>
 
             <div className="bm-footer-contact-items">
-              {/* Address with Google Maps redirection */}
               <a
                 href="https://maps.google.com/?q=8th+Floor,+ITHUM+Tower,+B-806,+Block+A,+Industrial+Area,+Sector+62,+Noida,+Uttar+Pradesh+201309"
                 target="_blank"
@@ -256,14 +277,13 @@ export default function Footer() {
                   <HiOutlineLocationMarker aria-hidden="true" />
                 </div>
                 <div className="bm-footer-contact-text">
-                  <span className="bm-footer-contact-label">Noida Office</span>
+                  <span className="bm-footer-contact-label">Noida Headquarters</span>
                   <span className="bm-footer-contact-value">
-                    8th Floor, ITHUM Tower, B-806, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309
+                    8th Floor, ITHUM Tower, B-806, Block A, Industrial Area, Sector 62, Noida, UP 201309
                   </span>
                 </div>
               </a>
 
-              {/* Phone */}
               <a
                 href="tel:+919990613140"
                 className="bm-footer-contact-item"
@@ -278,7 +298,6 @@ export default function Footer() {
                 </div>
               </a>
 
-              {/* Email */}
               <a
                 href="mailto:hello@brandmingo.com"
                 className="bm-footer-contact-item"
@@ -297,15 +316,43 @@ export default function Footer() {
         </div>
 
         {/* =========================================================
+            POPULAR LOCAL SEARCHES KEYWORD SILO (For Google Rank #1)
+           ========================================================= */}
+        <div className="bm-footer-seo-strip" aria-label="Popular Web Development Searches in Noida">
+          <div className="bm-footer-seo-title">
+            <span>POPULAR SEARCHES &bull; NOIDA &amp; DELHI NCR:</span>
+          </div>
+          <div className="bm-footer-keywords-cloud">
+            {popularSearches.map((term, index) => (
+              <span key={index} className="bm-seo-tag-item">
+                {term}
+                {index < popularSearches.length - 1 && (
+                  <span className="bm-seo-tag-dot" aria-hidden="true">&bull;</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* =========================================================
             BOTTOM COPYRIGHT BAR
            ========================================================= */}
         <div className="bm-footer-bottom-bar">
           <div className="bm-footer-copyright">
-            © 2026 Brandmingo Media Pvt. Ltd. All rights reserved.
+            © 2026 Brandmingo Media Pvt. Ltd. (
+            <a
+              href="https://brandmingo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "inherit", textDecoration: "underline" }}
+            >
+              brandmingo.com
+            </a>
+            ). All rights reserved.
           </div>
 
           <div className="bm-footer-bottom-badge">
-            <span>Engineering High-Performance Web Applications in Noida</span>
+            <span>Engineering High-Performance Custom Web Applications in Noida Sector 62</span>
           </div>
         </div>
       </div>

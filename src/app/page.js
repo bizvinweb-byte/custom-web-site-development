@@ -4,6 +4,7 @@ import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import ClientReviews from "@/components/ClientReviews";
 import OrangeMarqueeBanner from "@/components/OrangeMarqueeBanner";
 import BrandsSection from "@/components/BrandsSection";
+import FAQSection from "@/components/FAQSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import ServicesSection from "@/components/ServicesSection";
 import WhyCRO from "@/components/WhyCRO";
@@ -30,6 +31,7 @@ export default function Home() {
         <OurProcess />
         <PortfolioSection />
         <BrandsSection />
+        <FAQSection />
         <ReadyToBuild />
       </main>
 

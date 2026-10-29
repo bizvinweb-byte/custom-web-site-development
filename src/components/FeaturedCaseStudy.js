@@ -15,7 +15,7 @@ const projectScreenshots = [
     subtitle: "Custom product grid, instant search & 'Why Choose Us' highlights",
     badge: "Product Page • Catalog",
     image: "/projectsimg/leela-1.jpg",
-    alt: "Leela Custom Website Product Showcase and Catalog by Brandmingo",
+    alt: "Custom Website Development in Noida - Leela Gulf Product Showcase and Catalog by Brandmingo",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const projectScreenshots = [
     subtitle: "In-depth technical advantages & interactive industry solutions",
     badge: "Product Page • Benefits",
     image: "/projectsimg/leela-2.jpg",
-    alt: "Leela Key Product Benefits and Industry Expertise Section",
+    alt: "Custom Web Application Development Noida Sector 62 - Leela Key Product Benefits and Architecture",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const projectScreenshots = [
     subtitle: "Interactive storytelling timeline showcasing company growth & legacy",
     badge: "Our Journey • Milestones",
     image: "/projectsimg/leela-3.jpg",
-    alt: "Leela Our Journey Milestones and Company Timeline",
+    alt: "Enterprise Custom Web Development Company in Noida - Leela Milestones and Company Timeline",
   },
 ];
 

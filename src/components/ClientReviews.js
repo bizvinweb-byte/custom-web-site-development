@@ -5,10 +5,26 @@ import { HiStar } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 
 const clientLogos = [
-  { id: 1, src: "/clientlogos/client1.png", alt: "Client Partner Logo 1" },
-  { id: 2, src: "/clientlogos/client2.png", alt: "Client Partner Logo 2" },
-  { id: 3, src: "/clientlogos/client3.png", alt: "Client Partner Logo 3" },
-  { id: 4, src: "/clientlogos/client4.png", alt: "Client Partner Logo 4" },
+  {
+    id: 1,
+    src: "/clientlogos/client1.png",
+    alt: "Custom Website Development Client Noida - Brandmingo Verified Partner",
+  },
+  {
+    id: 2,
+    src: "/clientlogos/client2.png",
+    alt: "Full-Stack Web Application Client Noida Sector 62 - Brandmingo",
+  },
+  {
+    id: 3,
+    src: "/clientlogos/client3.png",
+    alt: "Enterprise CRM & LMS Portal Development Client Delhi NCR - Brandmingo",
+  },
+  {
+    id: 4,
+    src: "/clientlogos/client4.png",
+    alt: "E-Commerce Website Development Client Noida - 5 Star Google Rating",
+  },
 ];
 
 const googleReviews = [

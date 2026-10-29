@@ -47,7 +47,7 @@ export default function HeroSection() {
                   <HiOutlineDesktopComputer className="bm-badge-icon" />
                 </div>
                 <div className="bm-badge-text">
-                  <h2 className="bm-badge-title">Custom Websites</h2>
+                  <h3 className="bm-badge-title">Custom Websites</h3>
                   <p className="bm-badge-desc">SEO-ready & high-performing</p>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function HeroSection() {
                   <FiLayers className="bm-badge-icon" />
                 </div>
                 <div className="bm-badge-text">
-                  <h2 className="bm-badge-title">LMS & CRM Solutions</h2>
+                  <h3 className="bm-badge-title">LMS & CRM Solutions</h3>
                   <p className="bm-badge-desc">Scalable for your business</p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function HeroSection() {
                   <HiOutlineCog className="bm-badge-icon" />
                 </div>
                 <div className="bm-badge-text">
-                  <h2 className="bm-badge-title">Full-Stack Development</h2>
+                  <h3 className="bm-badge-title">Full-Stack Development</h3>
                   <p className="bm-badge-desc">Tailored to your goals</p>
                 </div>
               </div>

@@ -257,3 +257,4 @@ export function getAllCitySlugs() {
   });
   return slugs;
 }
+
